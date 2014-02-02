@@ -4,9 +4,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'opengeocache.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
+    url(r'^geocache/', include('geocache.urls', namespace='geocache')),
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -1,3 +1,4 @@
 from django.contrib import admin
+from geocache.models import Geocache
 
-# Register your models here.
+admin.site.register(Geocache)
