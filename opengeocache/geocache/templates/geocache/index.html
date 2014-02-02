@@ -1,0 +1,18 @@
+{% if geocache_list_all %}
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Openstreetmap URL</td>
+		</tr>
+		{% for geocache in geocache_list_all %}
+		<tr>
+			<td>{{ geocache.cache_name }}</td>
+			<td>{{ geocache.cache_description }}</td>
+			<td>{{ geocache.cache_url }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% else %}
+	<p>No geocaches found.</p>
+{% endif %}
