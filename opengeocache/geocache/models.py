@@ -21,7 +21,7 @@ class Geocache(models.Model):
             ('nano', 'Nano')
         )
 
-    cache_status = models.CharField(max_length=20, choices=type_choices, default='traditional')
+    cache_type = models.CharField(max_length=20, choices=type_choices, default='traditional')
 
     def __unicode__(self):
         return self.cache_name
