@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
 class GeocacheCreateView(CreateView):
 	model = Geocache
 	success_url = '/geocache/'
-	fields = ['cache_name', 'cache_description', 'cache_type', 'cache_' 'cache_url', 'cache_secret']
+	fields = ['cache_name', 'cache_description', 'cache_type', 'cache_url', 'cache_secret']
 
 	def form_valid(self, form):
 		form.instance.owner = self.request.user
