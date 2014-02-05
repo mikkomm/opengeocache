@@ -1,8 +1,20 @@
 {% load staticfiles %}
-
-<link href="{% static 'css/base.css' %}" rel="stylesheet" media="screen">
-
-<form action="" method="post">{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Create" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1 id="tables">Geocaches - hide something!</h1>
+	</div>
+		<form action="" method="post">{% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		<input class="btn btn-primary" type="submit" value="Create" />
+		</form>
+</div>
+</body>
+</html>

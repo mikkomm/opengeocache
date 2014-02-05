@@ -1,22 +1,36 @@
 {% load staticfiles %}
-
-<link href="{% static 'css/base.css' %}" rel="stylesheet" media="screen">
-
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+<div class="container">
 {% if geocache_list_all %}
-	<table>
+	<div class="page-header">
+		<h1 id="tables">Geocaches - go and find!</h1>
+	</div>
+	<div class="bs-example table-responsive">
+	<table class="table table-striped table-bordered table-hover">
 		<tr>
-			<td>Name</td>
-			<td>Description</td>
-			<td>Openstreetmap URL</td>
+			<td><b>Name</b></td>
+			<td><b>Description</b></td>
+			<td><b>Type</b></td>
+			<td><b>Open Street Map URL</b></td>
 		</tr>
 		{% for geocache in geocache_list_all %}
 		<tr>
 			<td>{{ geocache.cache_name }}</td>
 			<td>{{ geocache.cache_description }}</td>
-			<td>{{ geocache.cache_url }}</td>
+			<td>{{ geocache.cache_type }}</td>
+			<td><a href="{{ geocache.cache_url }}">Open Street Map URL</a></td>
 		</tr>
 		{% endfor %}
 	</table>
+	</div>
 {% else %}
 	<p>No geocaches found.</p>
 {% endif %}
+</div>
+</body>
+</html>
