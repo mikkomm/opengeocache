@@ -25,3 +25,8 @@ class Geocache(models.Model):
 
     def __unicode__(self):
         return self.cache_name
+
+class Checkin(models.Model):
+    checkin_cache       =   models.ForeignKey(Geocache)
+    checkin_found_date  =   models.DateTimeField('Date found')
+    checkin_user        =   models.ForeignKey(User)
