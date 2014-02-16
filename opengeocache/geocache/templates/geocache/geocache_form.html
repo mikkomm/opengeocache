@@ -1,10 +1,5 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 <div class="container">
 	<div class="page-header">
 		<h1 id="tables">Geocaches - hide something!</h1>
@@ -16,5 +11,4 @@
 		<input class="btn btn-primary" type="submit" value="Create" />
 		</form>
 </div>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Base</title>
+</head>
+<body>
+<div id="sidebar">
+    {% block sidebar %}
+    <ul>
+        <li><a href="/geocache/">Home</a></li>
+        <li><a href="/geocache/create">Create</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/logout">Logout</a></li>
+        {% else %}
+            <li><a href="/login">Login</a></li>
+        {% endif %}
+    </ul>
+    {% endblock %}
+</div>
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
